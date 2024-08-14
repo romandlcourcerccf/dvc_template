@@ -7,6 +7,7 @@ from pathlib import Path
 
 load_dotenv()
 
+
 def load():
 
     LOAD_DATA_PATH = os.environ.get("LOAD_DATA_PATH")

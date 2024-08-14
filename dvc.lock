@@ -5,8 +5,8 @@ stages:
     deps:
     - path: src/model_1/download/download.py
       hash: md5
-      md5: d8f49beb76e341548fa38d3b38447cbe
-      size: 621
+      md5: 4942cbbabe101a0e54304ac1d0334b60
+      size: 622
     outs:
     - path: data/model_1/download/initial_data.csv
       hash: md5
