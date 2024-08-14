@@ -1,5 +1,26 @@
-metrics:
-- dvclive/metrics.json
-plots:
-- dvclive/plots/metrics:
-    x: step
+stages:
+    model_1_download:
+	    cmd: 
+            - python src/model_1/download/download.py
+        deps:
+            - src/model_1/download/download.py
+        outs:
+            - data/model_1/download/initial_data.csv
+            - data/model_1/download/target.csv
+
+    model_1_transform:
+        cmd:
+            - python src/model_1/transform/transform.py
+        deps:
+            - data/model_1/download/initial_data.csv
+        outs:
+            - data/model_1/transform/prepared_data.csv
+
+    model_1_train:
+        cmd:
+	        - python src/model_1/train/train.py
+        deps:
+            - data/model_1/transform/prepared_data.csv
+        outs:
+            - data/model_1/train/linear_model.pickle
+
