@@ -25,8 +25,8 @@ def train():
     with open(TRAIN_CONFIG_PATH, "r") as conf:
         train_config = load(conf, Loader=Loader)["train_config"]
 
-    dataset = pd.read_csv(str(Path(TRANSFORM_DATA_PATH)) / 'prepared_data.csv' )
-    target = pd.read_csv(str(Path(LOAD_DATA_PATH)) / "target.csv" )  #Fix this later
+    dataset = pd.read_csv(str(Path(TRANSFORM_DATA_PATH) / 'prepared_data.csv' ))
+    target = pd.read_csv(str(Path(LOAD_DATA_PATH) / "target.csv" ))  #Fix this later
 
     train_index, validation_index = train_test_split(dataset.index, 
                                                      test_size=train_config["validation_size"])
@@ -47,14 +47,14 @@ def train():
                                         model.predict(dataset.loc[validation_index]))
     
 
-    with open(str(Path(MODEL_DATA_PATH)) / "linear_model.pickle", "wb") as model_file:
+    with open(str(Path(TRAIN_DATA_PATH) / "linear_model.pickle"), "wb") as model_file:
         model_file.write(pickle.dumps(model))
 
-    with Live(save_dvc_exp=True) as live:
-        live.log_artifact("%s/linear_model.pickle" % os.environ.get("MODELS_PATH"))
-        live.log_metric("train_MSE", train_MSE)
-        live.log_metric("test_MSE", test_MSE)
-        live.log_metric("validation_MSE", validation_MSE)
+    # with Live(save_dvc_exp=True) as live:
+    #     live.log_artifact("%s/linear_model.pickle" % os.environ.get("MODELS_PATH"))
+    #     live.log_metric("train_MSE", train_MSE)
+    #     live.log_metric("test_MSE", test_MSE)
+    #     live.log_metric("validation_MSE", validation_MSE)
 
 if __name__ == "__main__":
     train()
