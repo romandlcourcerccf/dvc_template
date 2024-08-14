@@ -1,0 +1,42 @@
+schema: '2.0'
+stages:
+  model_1_download:
+    cmd: python src/model_1/download/download.py
+    deps:
+    - path: src/model_1/download/download.py
+      hash: md5
+      md5: d8f49beb76e341548fa38d3b38447cbe
+      size: 621
+    outs:
+    - path: data/model_1/download/initial_data.csv
+      hash: md5
+      md5: 53f8aab5e42ac4132c1a086fe22bdef2
+      size: 94310
+    - path: data/model_1/download/target.csv
+      hash: md5
+      md5: 4072cb821028caaa53b4cfcb3b9f3f3a
+      size: 4171
+  model_1_transform:
+    cmd: python src/model_1/transform/transform.py
+    deps:
+    - path: data/model_1/download/initial_data.csv
+      hash: md5
+      md5: 53f8aab5e42ac4132c1a086fe22bdef2
+      size: 94310
+    outs:
+    - path: data/model_1/transform/prepared_data.csv
+      hash: md5
+      md5: 9baf10a3b757026d1f00c52dfbf7a718
+      size: 90325
+  model_1_train:
+    cmd: python src/model_1/train/train.py
+    deps:
+    - path: data/model_1/transform/prepared_data.csv
+      hash: md5
+      md5: 9baf10a3b757026d1f00c52dfbf7a718
+      size: 90325
+    outs:
+    - path: data/model_1/train/linear_model.pickle
+      hash: md5
+      md5: e5ad3ec8f1ca7270a2b8dcd51625f7e8
+      size: 905
