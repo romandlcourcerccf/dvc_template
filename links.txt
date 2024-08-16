@@ -1,0 +1,3 @@
+https://medium.com/nuances-of-programming/%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%BE-%D1%81-papermill-2ea1261bdbf9
+https://dvc.ai/blog/jupyter-notebook-dvc-pipeline
+

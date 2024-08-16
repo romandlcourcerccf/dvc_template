@@ -1,0 +1,5 @@
+dvc exp run
+dvc remote default local_storage
+
+pip install ipykernel
+ipython kernel install --user --name=dvc-proto

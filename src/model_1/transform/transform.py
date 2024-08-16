@@ -1,30 +1,11 @@
-import os
+import papermill as pm
 
-from dotenv import load_dotenv
-import pandas as pd
-from pathlib import Path
+def download():
+    pm.execute_notebook(
+    input_path='src/model_1/transform/transform.ipynb',
+    output_path='src/model_1/transform/transform_out.ipynb',
+    kernel_name='dvc-proto'
+)
 
-load_dotenv()
-
-def fillna(dataset: pd.DataFrame) -> pd.DataFrame:
-
-    prepare_dataset = dataset.copy()
-    for i, column in enumerate(dataset.columns):
-        if i % 2 == 0:
-            prepare_dataset[column] = prepare_dataset[column] - 1
-        else:
-            prepare_dataset[column] = prepare_dataset[column] - 2
-    
-    return prepare_dataset
-
-def transform():
-
-    LOAD_DATA_PATH = os.environ.get("MODEL_1_LOAD_DATA_PATH")
-    TRANSFORM_DATA_PATH = os.environ.get("MODEL_1_TRANSFORM_DATA_PATH")
-
-    dataset = pd.read_csv(str(Path(LOAD_DATA_PATH) / 'initial_data.csv'))
-    prepared_dataset = fillna(dataset=dataset)
-    prepared_dataset.to_csv(str(Path(TRANSFORM_DATA_PATH) / 'prepared_data.csv' ))
-
-if __name__ == "__main__":
-    transform()
+if __name__ == '__main__':
+    download()
