@@ -19,8 +19,8 @@ def fillna(dataset: pd.DataFrame) -> pd.DataFrame:
 
 def transform():
 
-    LOAD_DATA_PATH = os.environ.get("LOAD_DATA_PATH")
-    TRANSFORM_DATA_PATH = os.environ.get("TRANSFORM_DATA_PATH")
+    LOAD_DATA_PATH = os.environ.get("MODEL_1_LOAD_DATA_PATH")
+    TRANSFORM_DATA_PATH = os.environ.get("MODEL_1_TRANSFORM_DATA_PATH")
 
     dataset = pd.read_csv(str(Path(LOAD_DATA_PATH) / 'initial_data.csv'))
     prepared_dataset = fillna(dataset=dataset)

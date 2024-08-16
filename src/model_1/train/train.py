@@ -16,11 +16,11 @@ load_dotenv()
 
 def train():
 
-    LOAD_DATA_PATH=os.environ.get("LOAD_DATA_PATH")
-    TRANSFORM_DATA_PATH=os.environ.get("TRANSFORM_DATA_PATH")
-    TRAIN_DATA_PATH=os.environ.get("TRAIN_DATA_PATH")
-    MODEL_DATA_PATH=os.environ.get("MODEL_DATA_PATH")
-    TRAIN_CONFIG_PATH=os.environ.get("TRAIN_CONFIG_PATH")
+    LOAD_DATA_PATH=os.environ.get("MODEL_1_LOAD_DATA_PATH")
+    TRANSFORM_DATA_PATH=os.environ.get("MODEL_1_TRANSFORM_DATA_PATH")
+    TRAIN_DATA_PATH=os.environ.get("MODEL_1_TRAIN_DATA_PATH")
+    MODEL_DATA_PATH=os.environ.get("MODEL_1_MODEL_DATA_PATH")
+    TRAIN_CONFIG_PATH=os.environ.get("MODEL_1_TRAIN_CONFIG_PATH")
 
     with open(TRAIN_CONFIG_PATH, "r") as conf:
         train_config = load(conf, Loader=Loader)["train_config"]
