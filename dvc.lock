@@ -5,25 +5,25 @@ stages:
     deps:
     - path: data/model_1/download/initial_data.csv
       hash: md5
-      md5: 53f8aab5e42ac4132c1a086fe22bdef2
-      size: 94310
+      md5: 0690efa71f4095e1333d1bc97a04e678
+      size: 94309
     outs:
     - path: data/model_1/transform/prepared_data.csv
       hash: md5
-      md5: 9baf10a3b757026d1f00c52dfbf7a718
-      size: 90325
+      md5: d754995d54063edfbfa04557d4f7854e
+      size: 90326
   model_1_train:
     cmd: python src/model_1/train/train.py
     deps:
     - path: data/model_1/transform/prepared_data.csv
       hash: md5
-      md5: 9baf10a3b757026d1f00c52dfbf7a718
-      size: 90325
+      md5: d754995d54063edfbfa04557d4f7854e
+      size: 90326
     outs:
-    - path: data/model_1/train/linear_model.pickle
+    - path: data/model_1/params/params.yaml
       hash: md5
-      md5: e1609b5fdb7a32b06506029571959a2c
-      size: 905
+      md5: 3dbf6048b47abee40473fc1226046e4a
+      size: 41
   model_2_transform:
     cmd: python src/model_2/transform/transform.py
     deps:
