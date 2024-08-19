@@ -1,1 +1,5 @@
 /prepared_data.csv
+/X_test.parquet
+/X_train.parquet
+/y_test.parquet
+/y_train.parquet

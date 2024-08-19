@@ -4,7 +4,7 @@
 ['remote "local_storage"']
     url = /Users/roman/projects/dvc_template_data
 ['remote "minio"']
-    url = s3://dvc
+    url = s3://crypto
     endpointurl = http://127.0.0.1:9990
     access_key_id = dvc_user
     secret_access_key = dvc_pass

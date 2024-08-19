@@ -3,3 +3,15 @@ dvc remote default local_storage
 
 pip install ipykernel
 ipython kernel install --user --name=dvc-proto
+
+
+# setup default remote (change "bucket-name" to your minio backet name)
+dvc remote add -d minio s3://dvc -f
+
+# add information about storage url (where "https://minio.mysite.com" is your MinIO url)
+dvc remote modify minio endpointurl https://127.0.0.1:9990
+
+#  add MinIO credentials (e.g. from env. variables)
+dvc remote modify minio access_key_id dvc_login
+dvc remote modify minio secret_access_key dvc_pass
+

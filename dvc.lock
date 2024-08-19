@@ -3,26 +3,50 @@ stages:
   model_1_transform:
     cmd: python src/model_1/transform/transform.py
     deps:
-    - path: data/model_1/download/initial_data.csv
+    - path: data/model_1/download/raw_data.parquet
       hash: md5
-      md5: b8170fc31d0fa96120902b849b3db1fd
-      size: 94310
+      md5: 5d2a8ced68e64d2115040a3d2ca46fb4
+      size: 194213
     outs:
-    - path: data/model_1/transform/prepared_data.csv
+    - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: ef1d3eb6204932f74e50924b9aa51b24
-      size: 90325
+      md5: e6ca460c73b1f58a08ea2e7bda0233f2
+      size: 32157
+    - path: data/model_1/transform/X_train.parquet
+      hash: md5
+      md5: cfacba24efe2854f820b278df6264324
+      size: 113080
+    - path: data/model_1/transform/y_test.parquet
+      hash: md5
+      md5: d6e757b0815b4fb6d9272761fa0f759a
+      size: 11176
+    - path: data/model_1/transform/y_train.parquet
+      hash: md5
+      md5: 167522975ae65e691a43494669c46add
+      size: 38951
   model_1_train:
     cmd: python src/model_1/train/train.py
     deps:
-    - path: data/model_1/transform/prepared_data.csv
+    - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: ef1d3eb6204932f74e50924b9aa51b24
-      size: 90325
+      md5: e6ca460c73b1f58a08ea2e7bda0233f2
+      size: 32157
+    - path: data/model_1/transform/X_train.parquet
+      hash: md5
+      md5: cfacba24efe2854f820b278df6264324
+      size: 113080
+    - path: data/model_1/transform/y_test.parquet
+      hash: md5
+      md5: d6e757b0815b4fb6d9272761fa0f759a
+      size: 11176
+    - path: data/model_1/transform/y_train.parquet
+      hash: md5
+      md5: 167522975ae65e691a43494669c46add
+      size: 38951
     outs:
     - path: data/model_1/params/params.yaml
       hash: md5
-      md5: bd941e093582bfff574c7ff5f0c0ffda
+      md5: c34962dd75fbc7cd5bdf2a6d2c3685a4
       size: 41
   model_2_transform:
     cmd: python src/model_2/transform/transform.py

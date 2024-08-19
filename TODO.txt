@@ -1,0 +1,8 @@
+Think what additional tasks we are need (evaluate, ...).
+Configuration via hydra ???
+Add all libs to kernel during install no from notebook.
+Use parquet as data format
+
+
+
+

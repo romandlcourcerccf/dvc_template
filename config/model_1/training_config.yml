@@ -1,4 +1,5 @@
 train_config:
-    seed: 1
-    test_size: 0.4
-    validation_size: 0.1
+    iterations: 1000
+    learning_rate: 0.1
+    depth: 6
+    verbose: 0
