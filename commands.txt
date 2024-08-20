@@ -2,7 +2,7 @@ dvc exp run
 dvc remote default local_storage
 
 pip install ipykernel
-ipython kernel install --user --name=dvc-proto
+ipython kernel install --user --name=crypto-proto-1
 
 
 # setup default remote (change "bucket-name" to your minio backet name)
@@ -15,3 +15,5 @@ dvc remote modify minio endpointurl https://127.0.0.1:9990
 dvc remote modify minio access_key_id dvc_login
 dvc remote modify minio secret_access_key dvc_pass
 
+
+pip3 install virtualenv
