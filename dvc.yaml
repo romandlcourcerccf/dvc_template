@@ -24,6 +24,10 @@ stages:
         - data/model_1/transform/X_train.parquet
         - data/model_1/transform/y_test.parquet
         - data/model_1/transform/y_train.parquet
+
+    metrics:
+        - data/model_1/metrics/metrics.json: 
+            cache : false
  
     outs:
         - data/model_1/params/params.yaml

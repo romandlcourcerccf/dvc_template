@@ -5,52 +5,48 @@ stages:
     deps:
     - path: data/model_1/download/raw_data.parquet
       hash: md5
-      md5: 06f2ad1e554fa3845d220598a1ff6870
-      size: 155659
+      md5: 7cad2b7d4b76b148cc891229f91a3256
+      size: 199988
     outs:
     - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: 07441b68a75761a04d535e0b290b11b0
-      size: 26681
+      md5: ff9a6df96f3d211ff43e7c66cd25b4ff
+      size: 32971
     - path: data/model_1/transform/X_train.parquet
       hash: md5
-      md5: 281e243c06629647601ebaff0ff67b15
-      size: 90519
+      md5: ea823f70721cd6856418d19ed0563876
+      size: 116411
     - path: data/model_1/transform/y_test.parquet
       hash: md5
-      md5: fc72ada3433948a798e2025493a0e0ac
-      size: 9314
+      md5: aab90b2af7341ad0b4b19ba106288c3b
+      size: 11469
     - path: data/model_1/transform/y_train.parquet
       hash: md5
-      md5: 985b5df51ef5b9819366665157e7b9b3
-      size: 31238
+      md5: 15698518b83dd22fcfceac3b3012a699
+      size: 40102
   model_1_train:
     cmd: python src/model_1/train/train.py
     deps:
     - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: 07441b68a75761a04d535e0b290b11b0
-      size: 26681
+      md5: ff9a6df96f3d211ff43e7c66cd25b4ff
+      size: 32971
     - path: data/model_1/transform/X_train.parquet
       hash: md5
-      md5: 281e243c06629647601ebaff0ff67b15
-      size: 90519
+      md5: ea823f70721cd6856418d19ed0563876
+      size: 116411
     - path: data/model_1/transform/y_test.parquet
       hash: md5
-      md5: fc72ada3433948a798e2025493a0e0ac
-      size: 9314
+      md5: aab90b2af7341ad0b4b19ba106288c3b
+      size: 11469
     - path: data/model_1/transform/y_train.parquet
       hash: md5
-      md5: 985b5df51ef5b9819366665157e7b9b3
-      size: 31238
+      md5: 15698518b83dd22fcfceac3b3012a699
+      size: 40102
     outs:
-    - path: data/model_1/metrics/metrics.json
-      hash: md5
-      md5: 5128c97f9a8b1030f21d26c4a6aea08d
-      size: 26
     - path: data/model_1/params/params.yaml
       hash: md5
-      md5: 25ea659a68649de0e32e457eedfaece8
+      md5: 13b61dc42e366c2a1b4326ce8a419276
       size: 46
   model_2_transform:
     cmd: python src/model_2/transform/transform.py
