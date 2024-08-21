@@ -1,5 +1,5 @@
 train_config:
-    iterations: 1000
+    iterations: 10000
     learning_rate: 0.1
     depth: 6
     verbose: 0
