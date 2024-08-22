@@ -5,52 +5,52 @@ stages:
     deps:
     - path: data/model_1/download/raw_data.parquet
       hash: md5
-      md5: d702ad55039fb2c72559dda6f6486177
-      size: 200076
+      md5: 1e4f31399a98461402cc04075a267cd0
+      size: 155830
     outs:
     - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: f013fd5b130079359715a4487e07ea80
-      size: 33050
+      md5: 507ab5f2f150c6e2944ca5227d740851
+      size: 26698
     - path: data/model_1/transform/X_train.parquet
       hash: md5
-      md5: 6a42fc5a0d8258ccb130c35fd5c5c70f
-      size: 116401
+      md5: 2acd88404362b7759312b39e41c283fe
+      size: 90602
     - path: data/model_1/transform/y_test.parquet
       hash: md5
-      md5: 9aaa6be2a1bcdc21cd5504bba47569d9
-      size: 11486
+      md5: 10c1be332a3590c6d616ae18d1e5ba50
+      size: 9333
     - path: data/model_1/transform/y_train.parquet
       hash: md5
-      md5: c6f0dcd6e363e8f33f1cf0c7de781c0c
-      size: 40120
+      md5: cdfa979be8fc0d478cfd578f3fa42777
+      size: 31277
   model_1_train:
     cmd: python src/model_1/train/train.py
     deps:
     - path: data/model_1/transform/X_test.parquet
       hash: md5
-      md5: f013fd5b130079359715a4487e07ea80
-      size: 33050
+      md5: 507ab5f2f150c6e2944ca5227d740851
+      size: 26698
     - path: data/model_1/transform/X_train.parquet
       hash: md5
-      md5: 6a42fc5a0d8258ccb130c35fd5c5c70f
-      size: 116401
+      md5: 2acd88404362b7759312b39e41c283fe
+      size: 90602
     - path: data/model_1/transform/y_test.parquet
       hash: md5
-      md5: 9aaa6be2a1bcdc21cd5504bba47569d9
-      size: 11486
+      md5: 10c1be332a3590c6d616ae18d1e5ba50
+      size: 9333
     - path: data/model_1/transform/y_train.parquet
       hash: md5
-      md5: c6f0dcd6e363e8f33f1cf0c7de781c0c
-      size: 40120
+      md5: cdfa979be8fc0d478cfd578f3fa42777
+      size: 31277
     outs:
     - path: data/model_1/metrics/metrics.json
       hash: md5
-      md5: 5b31385002b4587389954fa63546081e
-      size: 51
+      md5: 406f57973ab488d73be1fe1ed8ee70f4
+      size: 53
     - path: data/model_1/params/params.yaml
       hash: md5
-      md5: 77c704afd1ca9348cc6e21ec5c13303e
+      md5: b96e95c976e0e5f5631667d26dcbc19e
       size: 46
   model_2_transform:
     cmd: python src/model_2/transform/transform.py

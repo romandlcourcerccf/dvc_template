@@ -4,3 +4,4 @@ https://dagshub.com/blog/configure-a-dvc-remote-without-a-devops-degree/
 
 https://www.geeksforgeeks.org/building-a-stock-price-prediction-model-with-catboost-a-hands-on-tutorial/
 
+https://shap.readthedocs.io/en/latest/example_notebooks/tabular_examples/tree_based_models/Catboost%20tutorial.html
