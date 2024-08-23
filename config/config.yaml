@@ -1,0 +1,6 @@
+s3:
+  AWS_ACCESS_KEY_ID: minio
+  AWS_SECRET_ACCESS_KEY: minio123
+mlflow:
+  MLFLOW_S3_ENDPOINT_URL: "http://127.0.0.1:9000"
+  MLFLOW_ENDPOINT_URL: "http://127.0.0.1:5000"

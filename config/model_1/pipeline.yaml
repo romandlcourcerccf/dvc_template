@@ -1,0 +1,16 @@
+load:
+  LOAD_DATA_PATH: /Users/roman/projects/dvc_template/data/model_1/download
+  LOAD_DATA_FILE: raw_data.parquet
+transform:
+  TRANSFORM_DATA_PATH: /Users/roman/projects/dvc_template/data/model_1/transform
+  TRANSFORM_DATA_FILE_TRAIN_X: X_train.parquet
+  TRANSFORM_DATA_FILE_TRAIN_Y: y_train.parquet
+  TRANSFORM_DATA_FILE_TEST_X: X_test.parquet
+  TRANSFORM_DATA_FILE_TEST_Y: y_test.parquet
+train:
+  TRAIN_DATA_PATH: /Users/roman/projects/dvc_template/data/model_1/train
+  MODEL_DATA_PATH: /Users/roman/projects/dvc_template/data/model_1/model
+  MODEL_METRICS: /Users/roman/projects/dvc_template/data/model_1/metrics/metrics.json
+  TRAIN_CONFIG_PATH: /Users/roman/projects/dvc_template/config/model_1/training_config.yml
+  SAVED_PARAMS: /Users/roman/projects/dvc_template/data/model_1/params/params.yaml
+  TRAIN_FILE_DATA_PATH: data/model_1/transform/prepared_data.csv
