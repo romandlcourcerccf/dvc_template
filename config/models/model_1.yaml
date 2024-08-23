@@ -1,3 +1,9 @@
+s3:
+  AWS_ACCESS_KEY_ID: minio
+  AWS_SECRET_ACCESS_KEY: minio123
+mlflow:
+  MLFLOW_S3_ENDPOINT_URL: "http://127.0.0.1:9000"
+  MLFLOW_TRACKING_URI: "http://127.0.0.1:5000"
 load:
   LOAD_DATA_PATH: /Users/roman/projects/dvc_template/data/model_1/download
   LOAD_DATA_FILE: raw_data.parquet
@@ -14,3 +20,8 @@ train:
   TRAIN_CONFIG_PATH: /Users/roman/projects/dvc_template/config/model_1/training_config.yml
   SAVED_PARAMS: /Users/roman/projects/dvc_template/data/model_1/params/params.yaml
   TRAIN_FILE_DATA_PATH: data/model_1/transform/prepared_data.csv
+  train_config:
+    iterations: 10000
+    learning_rate: 0.1
+    depth: 6
+    verbose: 0
